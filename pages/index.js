@@ -1,7 +1,7 @@
 import Link from 'next/link'
-
 import Head from 'next/head'
 import { blogPosts } from '../lib/data'
+import { format, parseISO } from 'date-fns'
 
 export default function Home () {
   return (
@@ -12,22 +12,31 @@ export default function Home () {
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
-      <main>
-        <h1>
-          My Tailwind & Markdown Blog.
-        </h1>
+      <main className='space-y-4'>
+
         {blogPosts.map((item) => (
-          <div key={item.slug}>
-            <div>
-              <Link href={`blog/${item.slug}`}>
-                <a>{item.title}</a>
-              </Link>
-            </div>
-            <div>{item.date.toString()}</div>
-            <div>{item.content}</div>
-          </div>
+          <ListBlogItems key={item.slug} {...item} />
         ))}
+
       </main>
+    </div>
+  )
+}
+
+function ListBlogItems ({ slug, title, date, content }) {
+  return (
+    <div className='border border-black-400 shadow hover:shadow-md hover:border-black-800 transition duration-100 ease-in-out rounded-md p-4'>
+      <div>
+        <Link href={`blog/${slug}`}>
+          <a className='text-xl font-bold'>
+            {title}
+          </a>
+        </Link>
+      </div>
+      <div className='text-gray-600 text-xs'>
+        {format(parseISO(date), 'd. MMMM uuu')}
+      </div>
+      <div>{content}</div>
     </div>
   )
 }
