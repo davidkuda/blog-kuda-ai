@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import { blogPosts } from '../../lib/data';
+import { format, parseISO } from 'date-fns'
 
 export default function BlogPage({title, date, content}) {
   return (
@@ -11,10 +12,20 @@ export default function BlogPage({title, date, content}) {
       </Head>
 
       <main>
-        <h1>
+        <div className='border-b-2 border-gray-200 mb-4'>
+        
+        <h2 className='text-3xl font-bold '>
           {title}
-        </h1>
+        </h2>
+        
+        <div className='text-gray-600 text-xs'>
+        {format(parseISO(date), 'd. MMMM uuu')}
+        </div>
+
+        </div>
+      
         <p>{content}</p>
+
       </main>
     </div>
   )
