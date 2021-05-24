@@ -1,7 +1,7 @@
 ---
 title: 'Blog Post num 2'
 slug: 'second_slug'
-date: 2021-05-21T20:44:05.872Z
+date: '2021-05-21T20:44:05.872Z'
 ---
 # Blog Post Number Two
 

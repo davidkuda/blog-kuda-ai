@@ -1,7 +1,7 @@
 ---
 title: 'Blog Post num 4'
 slug: 'fourth'
-date: 2021-05-21T20:44:05.872Z
+date: '2021-05-21T20:44:05.872Z'
 ---
 # Blog Post Number Four
 You can put your meta data in between the two lines at the top. That section there is commonly referred to as the "front matter". 
