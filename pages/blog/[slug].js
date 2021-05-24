@@ -1,8 +1,10 @@
 import Head from 'next/head'
-import { blogPosts } from '../../lib/data';
+import { getAllPosts } from '../../lib/data';
 import { format, parseISO } from 'date-fns'
+import { data } from 'autoprefixer';
 
-export default function BlogPage({title, date, content}) {
+export default function BlogPage({ title, date, content }) {
+
   return (
     <div>
       <Head>
@@ -32,16 +34,24 @@ export default function BlogPage({title, date, content}) {
 }
 
 export async function getStaticProps(context) {
-    const {params} = context
+    const { params } = context
+    const allPosts = getAllPosts()
+    const { data, content } = allPosts.find(item => item.slug === params.slug)
+
     return {
-      props: blogPosts.find(item => item.slug === params.slug)
+      props: {
+        ...data, 
+        date: data.date.toISOString(),
+        content
+      }
     }
   }
 
 export async function getStaticPaths() {
     return {
-      paths: blogPosts.map(item => ({ 
-          params: {slug: item.slug}
+      paths: getAllPosts().map(post => (
+        { 
+          params: {slug: post.slug}
         })),
       fallback: false
     }
