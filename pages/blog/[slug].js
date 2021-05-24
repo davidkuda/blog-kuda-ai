@@ -16,17 +16,19 @@ export default function BlogPage({ title, date, content }) {
       <main>
         <div className='border-b-2 border-gray-200 mb-4'>
         
-        <h2 className='text-3xl font-bold '>
-          {title}
-        </h2>
-        
-        <div className='text-gray-600 text-xs'>
-        {format(parseISO(date), 'd. MMMM uuu')}
-        </div>
+          <h2 className='text-3xl font-bold '>
+            {title}
+          </h2>
+          
+          <div className='text-gray-600 text-xs'>
+          {format(parseISO(date), 'd. MMMM uuu')}
+          </div>
 
         </div>
-      
-        <p>{content}</p>
+
+        <div className="whitespace-pre">
+          {content}
+        </div>
 
       </main>
     </div>
