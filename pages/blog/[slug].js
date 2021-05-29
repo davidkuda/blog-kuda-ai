@@ -15,7 +15,7 @@ export default function BlogPage({ frontMatter, source }) {
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
-      <main>
+      <main className='prose break-normal'>
         <div className='mb-4'>
         
           <h2 className='text-3xl font-bold '>
@@ -28,7 +28,7 @@ export default function BlogPage({ frontMatter, source }) {
 
         </div>
 
-        <div className="whitespace-pre">
+        <div>
           <MDXRemote {...source} />
         </div>
 
