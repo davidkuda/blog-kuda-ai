@@ -13,6 +13,7 @@ function MyApp ({ Component, pageProps }) {
           <ul className='flex flex-row justify-center space-x-4'>
             <li><Link href='/'><a>Home</a></Link></li>
             <li><Link href='/about'><a>About</a></Link></li>
+            <li><Link href='/music'><a>Music</a></Link></li>
           </ul>
         </nav>
       </header>
