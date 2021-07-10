@@ -1,10 +1,8 @@
 ---
-title: 'Get a list of filenames in Python'
+title: 'How to get a list of filenames in nested directories in python'
 slug: 'list_of_filenames_python'
 date: '2021-07-10T20:44:05.872Z'
 ---
-
-# How to get a list of filenames in python
 
 With the help of two modules from [Python's standard library](https://docs.python.org/3/library/) we will build few functions that can walk a directory and yield a list of files that match your criteria. We will use [the os module](https://docs.python.org/3/library/os.html) and [the glob module.](https://docs.python.org/3/library/glob.html) You can for example walk a every directory within a directory and every path to a `.json` file will be appended to the list. 
 
