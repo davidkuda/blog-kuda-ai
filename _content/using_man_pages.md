@@ -4,8 +4,6 @@ slug: 'using_man_pages'
 date: '2021-08-16T20:44:05.872Z'
 ---
 
-![unzip_man_page](./img/unzip_mang_page.png)
-
 I often need to look up commands and their respective options. Normally, I would google my question. Let me give two recent examples from this morning: 
 
 - _"How to set path with wget"_
