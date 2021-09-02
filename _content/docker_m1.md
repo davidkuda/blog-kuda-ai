@@ -30,3 +30,7 @@ RUN npm install
 COPY . .
 CMD ["npm", "run", "build"]
 ```
+
+### Find out about the architecture
+
+Let's say you have the image `jupyter/minimal-notebook:latest` on your local machine and you want to learn more about the image. Specifically, you want to find out the architecture of that image. Run `docker inspect davidkuda/custom_jupyter` and you will get a json with all the specs. 
