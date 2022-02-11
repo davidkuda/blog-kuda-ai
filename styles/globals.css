@@ -6,4 +6,32 @@
     a {
         @apply text-blue-600 hover:text-blue-400;
     }
+
+    h1 {
+        @apply font-medium leading-tight text-5xl mt-0 mb-2 text-blue-600;
+    }
+
+    h2 {
+        @apply font-medium leading-tight text-4xl mt-0 mb-2 text-blue-600;
+    }
+
+    h3 {
+        @apply font-medium leading-tight text-3xl mt-0 mb-2 text-blue-600;
+    }
+
+    h4  {
+        @apply font-medium leading-tight text-3xl mt-0 mb-2 text-blue-600;
+    }
+
+    img {
+        @apply py-6;
+    }
+
+    p {
+        @apply mb-6;
+    }
+
+    ul {
+        @apply list-disc pl-6 mb-3;
+    }
 }
