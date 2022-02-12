@@ -17,7 +17,7 @@ export default function About () {
 
         <h2>The topics I will probably cover in this blog:</h2>
         <ul>
-          <li><b>Code.</b> Software Engineering has become such a big thing in my life. It has been an incredible journey and I am very grateful that I can do what I do. Sometimes I find things that I do so interesting that I want to write about it and share it with the world. Sometimes I figure out things that might be useful for other people too. A recent example could be: "How can you authenticate to AWS ECR to register your docker images from GitLab CI?" Other ideas are reviewing online courses or pondering upon the technologies I use for this blog.</li>
+          <li><b>Code.</b> Software Engineering has become such a big thing in my life. It has been an incredible journey and I am very grateful that I can do what I do. Sometimes I find things that I do so interesting that I want to write about them and share them with the world. Sometimes I figure out things that might be useful for other people too. A recent example could be: "How can you authenticate to AWS ECR to register your docker images from GitLab CI?" Other ideas are reviewing online courses or pondering upon the technologies I use for this blog.</li>
           <li><b>Guitar.</b> I love playing the guitar and jam around. When you play an instrument you might sometimes have aha-moments. Thinking about these aha-moments is meaningful to me and I would like to share some of these every now and then.</li>
           <li><b>Life.</b> What does life mean? Why are we here? What is really meaningful? I have been thinking about these things since a childhood, and perhaps I might write about these things as well.</li>
         </ul>

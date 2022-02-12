@@ -31,7 +31,7 @@
         @apply mb-6;
     }
 
-    ul {
+    ul.simple-list {
         @apply list-disc pl-6 mb-3;
     }
 }
