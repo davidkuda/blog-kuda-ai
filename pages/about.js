@@ -11,8 +11,8 @@ export default function About() {
       </Head>
 
       <main>
-        <p>Hello everyone! Thank you so much for coming here.</p>
         <img src="https://images.ctfassets.net/pedj0c0bs6fa/qwPcHTncKrThonbe8Pawy/03ce84edcd7470ca8d622a404e7d2e8a/dave.jpg?w=800" />
+        <p>Hello ! Thank you so much for coming here !</p>
         <p>
           My name is David (some call me DataDave ^^), I am a Data Engineer with
           Alexander Thamm GmbH. I am a self-taught developer. In 2018 I
