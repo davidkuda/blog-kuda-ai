@@ -2,24 +2,47 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  html {
+    background: #ece9e6; /* fallback for old browsers */
+    background: -webkit-linear-gradient(
+      to bottom,
+      #ffffff,
+      #ece9e6
+    ); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+      to bottom,
+      #ffffff,
+      #ece9e6
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  }
+
+  .gradient-text {
+    background: #ff4e50; /* fallback for old browsers */
+    background: -webkit-linear-gradient(
+      to right,
+      #f9d423,
+      #ff4e50
+    ); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+      to right,
+      #f9d423,
+      #ff4e50
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
   a {
-    @apply text-blue-600 hover:text-blue-400;
+    /* @apply underline; */
   }
 
   h1 {
-    @apply font-medium leading-tight text-5xl mt-0 mb-2 text-blue-600;
+    @apply font-medium leading-tight text-5xl mt-0 mb-2;
   }
 
   h2 {
-    @apply font-medium leading-tight text-4xl mt-0 mb-2 text-blue-600;
-  }
-
-  h3 {
-    @apply font-medium leading-tight text-3xl mt-0 mb-2 text-blue-600;
-  }
-
-  h4 {
-    @apply font-medium leading-tight text-3xl mt-0 mb-2 text-blue-600;
+    @apply font-medium leading-tight text-4xl mt-0 mb-2;
   }
 
   img {
