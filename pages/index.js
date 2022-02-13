@@ -39,18 +39,23 @@ export async function getStaticProps () {
 
 function ListBlogItems ({ slug, title, date, content }) {
   return (
-    <div className='border border-gray-100 hover:border-gray-200 shadow hover:shadow-md transition duration-100 ease-in-out rounded-md p-4'>
+    <Link href={`blog/${slug}`}>
+    <div
+    className="
+      border border-gray-100 hover:border-gray-200 shadow hover:shadow-md 
+      transition duration-100 ease-in-out rounded-md p-4 bg-white
+      cursor-pointer"
+    >
       <div>
-        <Link href={`blog/${slug}`}>
           <a className='text-xl font-bold'>
             {title}
           </a>
-        </Link>
       </div>
       <div className='text-gray-600 text-xs'>
         {format(parseISO(date), 'd. MMMM uuu')}
       </div>
       <div>{content.substr(0, 300)}</div>
     </div>
+    </Link>
   )
 }
