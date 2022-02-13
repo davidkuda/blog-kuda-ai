@@ -13,9 +13,11 @@ export default function Home({ posts }) {
       </Head>
 
       <main className="space-y-4">
-        {posts.map((item) => (
-          <ListBlogItems key={item.slug} {...item} />
-        ))}
+        <div className="blog-posts-container flex flex-row flex-wrap justify-center">
+          {posts.map((item) => (
+            <ListBlogItems key={item.slug} {...item} />
+          ))}
+        </div>
       </main>
     </div>
   );
@@ -35,6 +37,7 @@ export async function getStaticProps() {
   };
 }
 
+// basis-1/2 gap-2 m-2 w-1/4
 function ListBlogItems({ slug, title, date, content }) {
   return (
     <Link href={`blog/${slug}`}>
@@ -42,15 +45,15 @@ function ListBlogItems({ slug, title, date, content }) {
         className="
       border border-gray-100 hover:border-gray-200 shadow hover:shadow-md 
       transition duration-100 ease-in-out rounded-md p-4 bg-white
-      cursor-pointer"
+      cursor-pointer
+      basis-1/2 m-1 w-2/5"
       >
         <div>
-          <a className="text-xl font-bold">{title}</a>
+          <a className="text-l font-medium">{title}</a>
         </div>
         <div className="text-gray-600 text-xs">
           {format(parseISO(date), "d. MMMM uuu")}
         </div>
-        <div>{content.substr(0, 300)}</div>
       </div>
     </Link>
   );
