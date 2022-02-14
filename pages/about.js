@@ -26,7 +26,7 @@ export default function About() {
           I have many interests and am very curious and open-minded by nature.
         </p>
 
-        <h2>The topics I will probably cover in this blog:</h2>
+        <h3 className="gradient-text text-2xl font-light">The topics I will probably cover in this blog:</h3>
         <ul className="simple-list">
           <li>
             <b>Code.</b> Software Engineering has become such a big thing in my
@@ -58,7 +58,7 @@ export default function About() {
           and I truly want to bring value to those who take the moment to
           listen. I regard this blog as an experiment, let's see where it leads.
         </p>
-        <h2>Why I am starting this blog:</h2>
+        <h3 className="gradient-text text-2xl font-light">Why I am starting this blog:</h3>
         <ul className="simple-list">
           <li>
             Bring value to the world, or at least to those on the world who
