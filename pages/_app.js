@@ -4,7 +4,7 @@ import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }) {
   return (
-    <div className="mx-auto w-3/5 my-20">
+    <div className="mx-auto md:w-3/5 w-10/12 my-20">
       <header>
         <h1 className="text-4xl font-bold text-center gradient-text">
           kuda.ai | code. guitar. life.
