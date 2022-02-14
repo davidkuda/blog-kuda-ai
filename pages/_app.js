@@ -9,6 +9,7 @@ function MyApp({ Component, pageProps }) {
         <h1 className="text-4xl font-bold text-center gradient-text">
           kuda.ai | code. guitar. life.
         </h1>
+        <p className="flex justify-center text-center">(please note that this webiste is under construction)</p>
         <nav className="my-4">
           <ul className="flex flex-row justify-center space-x-4 gradient-text">
             <li>
