@@ -16,7 +16,9 @@ export default function BlogPage({ frontMatter, source }) {
 
         <main className="prose break-normal">
           <div className="mb-4">
-            <h2 className="text-3xl font-bold ">{frontMatter.title}</h2>
+            <h2 className="md:text-3xl text-xl font-bold">
+              {frontMatter.title}
+            </h2>
 
             <div className="text-gray-600 text-xs">
               {format(parseISO(frontMatter.date), "d. MMMM uuu")}
