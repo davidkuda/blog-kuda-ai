@@ -6,7 +6,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <div className="mx-auto md:w-3/5 w-10/12 my-20 h-full">
       <header>
-        <h1 className="text-4xl font-bold text-center gradient-text">
+        <h1 className="md:text-4xl text-xl font-bold text-center gradient-text">
           kuda.ai | code. guitar. life.
         </h1>
         <p className="flex justify-center text-center">(please note that this webiste is under construction)</p>
