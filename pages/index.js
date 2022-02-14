@@ -46,7 +46,7 @@ function ListBlogItems({ slug, title, date, content }) {
       border border-gray-100 hover:border-gray-200 shadow hover:shadow-md 
       transition duration-100 ease-in-out rounded-md p-4 bg-white
       cursor-pointer
-      basis-1/2 m-1 w-2/5"
+      basis-1/2 m-0.5 w-5/12"
       >
         <div>
           <a className="text-l font-medium">{title}</a>
