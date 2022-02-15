@@ -4,6 +4,9 @@
 
 @layer base {
   html {
+    @apply font-mono text-sm md:text-base;
+  }
+  html {
     background: #ece9e6; /* fallback for old browsers */
     background: -webkit-linear-gradient(
       to bottom,
@@ -18,17 +21,18 @@
   }
 
   .gradient-text {
-    background: #ff4e50; /* fallback for old browsers */
+    background: #fdc830; /* fallback for old browsers */
     background: -webkit-linear-gradient(
       to right,
-      #f9d423,
-      #ff4e50
+      #f37335,
+      #fdc830
     ); /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(
       to right,
-      #f9d423,
-      #ff4e50
+      #f37335,
+      #fdc830
     ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
