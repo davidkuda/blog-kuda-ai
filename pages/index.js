@@ -8,16 +8,19 @@ export default function Home({ posts }) {
     <div>
       <Head>
         <title>kuda.ai | code. guitar. life.</title>
-        <meta name="description" content="David Kuda on Code, Guitar and Life." />
+        <meta
+          name="description"
+          content="David Kuda on Code, Guitar and Life."
+        />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main className="space-y-4">
-        <div className="blog-posts-container flex flex-row flex-wrap justify-center">
+        <ul className="blog-posts-container flex flex-row flex-wrap justify-center">
           {posts.map((item) => (
             <ListBlogItems key={item.slug} {...item} />
           ))}
-        </div>
+        </ul>
       </main>
     </div>
   );
@@ -41,20 +44,15 @@ export async function getStaticProps() {
 function ListBlogItems({ slug, title, date, content }) {
   return (
     <Link href={`blog/${slug}`}>
-      <div
-        className="
-      border border-gray-100 hover:border-gray-200 shadow hover:shadow-md 
-      transition duration-100 ease-in-out rounded-md p-4 bg-white
-      cursor-pointer
-      basis-1/2 m-0.5 w-5/12"
-      >
+      <li className="cursor-pointer w-2/3 mx-2 my-3">
         <div>
           <a className="text-l font-medium">{title}</a>
+          <br></br>
+          <span className="text-gray-600 text-xs">
+            {format(parseISO(date), "d. MMMM uuu")}
+          </span>
         </div>
-        <div className="text-gray-600 text-xs">
-          {format(parseISO(date), "d. MMMM uuu")}
-        </div>
-      </div>
+      </li>
     </Link>
   );
 }
