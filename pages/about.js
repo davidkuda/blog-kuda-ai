@@ -10,7 +10,7 @@ export default function About() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
+      <main className="prose md:text-base text-xs">
         <img src="https://images.ctfassets.net/pedj0c0bs6fa/qwPcHTncKrThonbe8Pawy/03ce84edcd7470ca8d622a404e7d2e8a/dave.jpg?w=800" />
         <p>Hello ! Thank you so much for coming here !</p>
         <p>
@@ -63,6 +63,9 @@ export default function About() {
           <li>
             Bring value to the world, or at least to those on the world who
             share the same interests as I do.
+          </li>
+          <li>
+            Writing makes things clear and obvious. It's effective to process and structure life.
           </li>
           <li>To have a space to create things, as I like creating things.</li>
           <li>
