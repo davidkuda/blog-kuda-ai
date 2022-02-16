@@ -16,7 +16,7 @@ function MyApp({ Component, pageProps }) {
           <ul className="flex flex-row justify-center space-x-4 gradient-text">
             <li>
               <Link href="/">
-                <a>Home</a>
+                <a>Blog</a>
               </Link>
             </li>
             <li>
