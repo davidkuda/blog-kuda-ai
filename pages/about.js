@@ -20,7 +20,7 @@ export default function About() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="prose md:text-base text-xs">
+      <main className="prose text-sm md:text-base">
         <img src="https://images.ctfassets.net/pedj0c0bs6fa/qwPcHTncKrThonbe8Pawy/03ce84edcd7470ca8d622a404e7d2e8a/dave.jpg?w=800" />
         <p>Hello ! Thank you so much for coming here !</p>
         <p>
@@ -43,7 +43,7 @@ export default function About() {
           I have many interests and am very curious and open-minded by nature.
         </p>
 
-        <h3 className="gradient-text text-2xl font-light">
+        <h3 className="gradient-text text-lg md:text-2xl font-light">
           The topics I will probably cover in this blog:
         </h3>
         <ul className="simple-list">
@@ -77,7 +77,7 @@ export default function About() {
           and I truly want to bring value to those who take the time to
           listen. I regard this blog as an experiment, let's see where it leads.
         </p>
-        <h3 className="gradient-text text-2xl font-light">
+        <h3 className="gradient-text text-lg md:text-2xl font-light">
           Why I am starting this blog:
         </h3>
         <ul className="simple-list">
