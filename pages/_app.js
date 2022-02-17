@@ -13,7 +13,7 @@ function MyApp({ Component, pageProps }) {
           (please note that this webiste is under construction)
         </p>
         <nav className="my-4">
-          <ul className="flex flex-row justify-center space-x-4 gradient-text">
+          <ul className="flex flex-row justify-center space-x-4 underline">
             <li>
               <Link href="/">
                 <a>Blog</a>
