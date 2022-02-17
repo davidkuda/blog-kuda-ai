@@ -6,11 +6,17 @@ export default function About() {
     <div>
       <Head>
         <title>About</title>
-        <meta name="description" content="kuda.ai | David Kuda on Code, Guitar and Life." />
+        <meta
+          name="description"
+          content="kuda.ai | David Kuda on Code, Guitar and Life."
+        />
         <meta property="og:title" content="kuda.ai" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.kuda.ai/about" />
-        <meta property="og:image" content="https://images.ctfassets.net/pedj0c0bs6fa/qwPcHTncKrThonbe8Pawy/03ce84edcd7470ca8d622a404e7d2e8a/dave.jpg?w=800" />
+        <meta
+          property="og:image"
+          content="https://images.ctfassets.net/pedj0c0bs6fa/qwPcHTncKrThonbe8Pawy/03ce84edcd7470ca8d622a404e7d2e8a/dave.jpg?w=800"
+        />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -18,13 +24,20 @@ export default function About() {
         <img src="https://images.ctfassets.net/pedj0c0bs6fa/qwPcHTncKrThonbe8Pawy/03ce84edcd7470ca8d622a404e7d2e8a/dave.jpg?w=800" />
         <p>Hello ! Thank you so much for coming here !</p>
         <p>
-          My name is David (some call me DataDave ^^), I am a Data Engineer with
-          Alexander Thamm GmbH. I am a self-taught developer. In 2018 I
-          graduated in Business Communications from HWZ Hochschule für
-          Wirtschaft Zürich / HWZ University of Applied Sciences Zurich. Since
-          2019 I live in Berlin. Berlin has a vibrant tech scene and inspired me
-          to get into code. I came here for my then-girlfriend now-wife. Since
-          2021 we are parents of a very sweet girl.
+          My name is David ( some call me DataDave ^^ ), I am a Data Engineer
+          with Alexander Thamm GmbH. I am a self-taught developer. In 2018 I
+          graduated in{" "}
+          <a
+            href="https://fh-hwz.ch/produkt/bachelor-business-communications/"
+            target="_blank"
+          >
+            Business Communications
+          </a>{" "}
+          from HWZ Hochschule für Wirtschaft Zürich / HWZ University of Applied
+          Sciences in Business Administration Zurich. Since 2019 I live in
+          Berlin. Berlin has a vibrant tech scene and inspired me to get into
+          code. I came here for my then-girlfriend now-wife. Since 2021 we are
+          parents of a very sweet girl.
         </p>
         <p>
           I have many interests and am very curious and open-minded by nature.
@@ -53,15 +66,15 @@ export default function About() {
           </li>
           <li>
             <b>Life.</b> What does life mean? Why are we here? What is really
-            meaningful? I have been thinking about these things since a
-            childhood, and perhaps I might write about these things as well.
+            meaningful? I have been thinking about these things since childhood,
+            and perhaps I might write about these things as well.
           </li>
         </ul>
         <p>
           I am never exactly sure why of all people you should read me / listen
           to me. Who am I that I could tell you something about these things? I
           don't know. I want to avoid meaninglessness, redundancy, irrelevance
-          and I truly want to bring value to those who take the moment to
+          and I truly want to bring value to those who take the time to
           listen. I regard this blog as an experiment, let's see where it leads.
         </p>
         <h3 className="gradient-text text-2xl font-light">
