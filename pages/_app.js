@@ -2,7 +2,7 @@ import Link from "next/link";
 
 import "../styles/globals.css";
 
-function MyApp({ Component, pageProps }) {
+function App({ Component, pageProps }) {
   return (
     <div className="mx-auto md:w-3/5 w-10/12 my-20 h-full">
       <header>
@@ -32,4 +32,4 @@ function MyApp({ Component, pageProps }) {
   );
 }
 
-export default MyApp;
+export default App;
