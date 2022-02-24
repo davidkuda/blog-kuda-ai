@@ -1,7 +1,8 @@
-import Link from "next/link";
 import Head from "next/head";
+
 import { getAllPosts } from "../lib/data";
-import { format, parseISO } from "date-fns";
+import ListBlogPosts from "../components/ListBlogPosts";
+
 
 export default function Home({ posts }) {
   return (
@@ -18,7 +19,7 @@ export default function Home({ posts }) {
       <main className="space-y-4">
         <ul className="blog-posts-container flex flex-row flex-wrap justify-center">
           {posts.map((item) => (
-            <ListBlogItems key={item.slug} {...item} />
+            <ListBlogPosts key={item.slug} {...item} />
           ))}
         </ul>
       </main>
@@ -38,21 +39,4 @@ export async function getStaticProps() {
       })),
     },
   };
-}
-
-// basis-1/2 gap-2 m-2 w-1/4
-function ListBlogItems({ slug, title, date, content }) {
-  return (
-    <Link href={`blog/${slug}`}>
-      <li className="cursor-pointer w-2/3 mx-2 my-3">
-        <div>
-          <a className="text-l font-medium">{title}</a>
-          <br></br>
-          <span className="text-gray-600 text-xs">
-            {format(parseISO(date), "d. MMMM uuu")}
-          </span>
-        </div>
-      </li>
-    </Link>
-  );
 }
