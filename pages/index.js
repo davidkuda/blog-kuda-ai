@@ -1,10 +1,10 @@
 import Head from "next/head";
 
-import { getAllPosts } from "../lib/data";
+import { getSortedPostsData } from "../lib/posts";
 import ListBlogPosts from "../components/ListBlogPosts";
 
-
-export default function Home({ posts }) {
+export default function Home({ allPostsData }) {
+  console.log(allPostsData)
   return (
     <div>
       <Head>
@@ -18,7 +18,7 @@ export default function Home({ posts }) {
 
       <main className="space-y-4">
         <ul className="blog-posts-container flex flex-row flex-wrap justify-center">
-          {posts.map((item) => (
+          {allPostsData.map((item) => (
             <ListBlogPosts key={item.slug} {...item} />
           ))}
         </ul>
@@ -28,15 +28,10 @@ export default function Home({ posts }) {
 }
 
 export async function getStaticProps() {
-  const allPosts = getAllPosts();
+  const allPostsData = getSortedPostsData();
   return {
     props: {
-      posts: allPosts.map(({ data, content, slug }) => ({
-        ...data,
-        date: data.date,
-        content,
-        slug,
-      })),
+      allPostsData,
     },
   };
 }
