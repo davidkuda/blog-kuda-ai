@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { getAllPosts } from "../../lib/data";
+import { getSortedPostsData } from "../../lib/posts";
 import { format, parseISO } from "date-fns";
 import { serialize } from "next-mdx-remote/serialize";
 import { MDXRemote } from "next-mdx-remote";
@@ -39,7 +39,7 @@ export default function BlogPage({ frontMatter, source }) {
 
 export async function getStaticProps(context) {
   const { params } = context;
-  const allPosts = getAllPosts();
+  const allPosts = getSortedPostsData();
   const { data, content } = allPosts.find((item) => item.slug === params.slug);
   const mdxSource = await serialize(content, { scope: data });
   return {
@@ -50,11 +50,11 @@ export async function getStaticProps(context) {
   };
 }
 
-export async function getStaticPaths() {
-  return {
-    paths: getAllPosts().map((post) => ({
-      params: { slug: post.slug },
-    })),
-    fallback: false,
-  };
-}
+// export async function getStaticPaths() {
+//   return {
+//     paths: getSortedPostsData().map((post) => ({
+//       params: { slug: post.slug },
+//     })),
+//     fallback: false,
+//   };
+// }
