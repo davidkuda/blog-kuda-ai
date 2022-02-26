@@ -1,7 +1,7 @@
 import Head from "next/head";
 
 import { getSortedPostsData } from "../lib/posts";
-import ListBlogPosts from "../components/ListBlogPosts";
+import BlogPostPreviewCard from "../components/BlogPostPreviewCard";
 
 export default function Home({ allPostsData }) {
   return (
@@ -18,7 +18,7 @@ export default function Home({ allPostsData }) {
       <main className="space-y-4">
         <ul className="blog-posts-container flex flex-row flex-wrap justify-center">
           {allPostsData.map((post) => (
-            <ListBlogPosts key={post.id} {...post} />
+            <BlogPostPreviewCard key={post.id} {...post} />
           ))}
         </ul>
       </main>

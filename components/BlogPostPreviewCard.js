@@ -1,8 +1,7 @@
 import Link from "next/link";
 import { format, parseISO } from "date-fns";
 
-
-export default function ListBlogPosts({ id, title, date }) {
+export default function BlogPostPreviewCard({ id, title, date }) {
   return (
     <Link href={`blog/${id}`}>
       <li className="cursor-pointer w-2/3 mx-2 my-3">
