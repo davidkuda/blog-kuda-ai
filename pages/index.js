@@ -18,8 +18,8 @@ export default function Home({ allPostsData }) {
 
       <main className="space-y-4">
         <ul className="blog-posts-container flex flex-row flex-wrap justify-center">
-          {allPostsData.map((item) => (
-            <ListBlogPosts key={item.slug} {...item} />
+          {allPostsData.map((post) => (
+            <ListBlogPosts key={post.id} {...post} />
           ))}
         </ul>
       </main>
