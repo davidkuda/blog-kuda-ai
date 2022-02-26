@@ -1,6 +1,5 @@
 ---
 title: 'Flatten nested values in a pandas DataFrame'
-slug: 'flatten_pandas_dataframes'
 date: '2021-07-10'
 ---
 

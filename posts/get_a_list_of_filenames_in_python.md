@@ -1,6 +1,5 @@
 ---
 title: 'How to get a list of filenames in nested directories in python'
-slug: 'yield_filepaths_recursively'
 date: '2021-07-10'
 ---
 

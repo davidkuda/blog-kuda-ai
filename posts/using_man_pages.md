@@ -1,6 +1,5 @@
 ---
 title: 'How to look up your command options in the man pages'
-slug: 'navigating_man_pages'
 date: '2021-08-16'
 ---
 
