@@ -4,7 +4,6 @@ import { getSortedPostsData } from "../lib/posts";
 import ListBlogPosts from "../components/ListBlogPosts";
 
 export default function Home({ allPostsData }) {
-  console.log(allPostsData)
   return (
     <div>
       <Head>
