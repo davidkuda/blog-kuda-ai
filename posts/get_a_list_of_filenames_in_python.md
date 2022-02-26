@@ -1,7 +1,7 @@
 ---
 title: 'How to get a list of filenames in nested directories in python'
 slug: 'yield_filepaths_recursively'
-date: '2021-07-10T20:44:05.872Z'
+date: '2021-07-10'
 ---
 
 With the help of two modules from [Python's standard library](https://docs.python.org/3/library/) we will build a functions that can walk a directory and yield the name of any file that matches your criteria. We will use [the os module](https://docs.python.org/3/library/os.html) and [the glob module.](https://docs.python.org/3/library/glob.html) You could for example recursively iterate a directory and yield all files that end in `.json`.

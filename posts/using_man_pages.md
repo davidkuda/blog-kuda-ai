@@ -1,7 +1,7 @@
 ---
 title: 'How to look up your command options in the man pages'
 slug: 'navigating_man_pages'
-date: '2021-08-16T20:44:05.872Z'
+date: '2021-08-16'
 ---
 
 I often need to look up commands and their respective options. Normally, I would google my question. Let me give three recent examples from this morning: 

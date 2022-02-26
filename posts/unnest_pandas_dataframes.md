@@ -1,7 +1,7 @@
 ---
 title: 'Flatten nested values in a pandas DataFrame'
 slug: 'flatten_pandas_dataframes'
-date: '2021-07-10T20:44:05.872Z'
+date: '2021-07-10'
 ---
 
 Sometimes some columns carry a list as value. Sometimes a nested dictionary. And sometimes we want to automatically expand and flatten those lists and dictionaries into a larger dataframe. 
