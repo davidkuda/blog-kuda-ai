@@ -12,8 +12,8 @@ export default function Post({ postData }) {
           <meta name="description" content={postData.description} />
           <link rel="icon" href="/favicon.ico" />
         </Head>
-
-        <main className="prose break-normal">
+        <div className="flex flex-col md:items-center">
+        <main className="prose prose-sm md:prose-base">
           <div className="mb-4">
             <h2 className="md:text-3xl text-xl font-bold">{postData.title}</h2>
 
@@ -26,6 +26,7 @@ export default function Post({ postData }) {
             <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
           </div>
         </main>
+        </div>
       </div>
     </>
   );
