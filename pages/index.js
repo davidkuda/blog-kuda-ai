@@ -1,9 +1,10 @@
 import Head from "next/head";
 
-import { getSortedPostsData } from "../lib/posts";
+import { getPostsFromContentful } from "../lib/contentful_api";
 import BlogPostPreviewCard from "../components/BlogPostPreviewCard";
 
-export default function Home({ allPostsData }) {
+export default function Home(props) {
+  console.log(props);
   return (
     <div>
       <Head>
@@ -17,8 +18,13 @@ export default function Home({ allPostsData }) {
 
       <main className="space-y-4">
         <ul className="blog-posts-container flex flex-row flex-wrap justify-center">
-          {allPostsData.map((post) => (
-            <BlogPostPreviewCard key={post.id} {...post} />
+          {props.allPostsData.map((post) => (
+            <BlogPostPreviewCard
+              key={post.fields.id}
+              id={post.fields.id}
+              title={post.fields.title}
+              date={post.fields.creationDate}
+            />
           ))}
         </ul>
       </main>
@@ -27,7 +33,7 @@ export default function Home({ allPostsData }) {
 }
 
 export async function getStaticProps() {
-  const allPostsData = getSortedPostsData();
+  const allPostsData = await getPostsFromContentful();
   return {
     props: {
       allPostsData,
