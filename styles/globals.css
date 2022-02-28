@@ -18,6 +18,7 @@
       #ffffff,
       #ece9e6
     ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    min-height: 100vh;
   }
 
   .gradient-text {
@@ -32,7 +33,6 @@
       #f37335,
       #fdc830
     ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
