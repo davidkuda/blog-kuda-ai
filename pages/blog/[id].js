@@ -42,9 +42,10 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-  const paths = getAllPostIds();
+  const allPosts = await getPostsFromContentful();
+  const paths = allPosts.map(p => `/posts/${p.fields.id}`);
   return {
-    paths,
-    fallback: false,
+    paths: paths,
+    fallback: true,
   };
 }
