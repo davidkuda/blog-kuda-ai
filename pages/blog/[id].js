@@ -48,6 +48,6 @@ export async function getStaticPaths() {
   const paths = allPosts.map((p) => `/blog/${p.fields.id}`);
   return {
     paths: paths,
-    fallback: true,
+    fallback: false,
   };
 }
