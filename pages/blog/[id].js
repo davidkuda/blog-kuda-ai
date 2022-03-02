@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { format, parseISO } from "date-fns";
 
-import { getAllPostIds, getPostData } from "../../lib/posts";
+import { getPostsFromContentful, getPost } from "../../lib/contentful_api";
 
 export default function Post({ postData }) {
   return (
@@ -18,7 +18,7 @@ export default function Post({ postData }) {
             <h2 className="md:text-3xl text-xl font-bold">{postData.title}</h2>
 
             <div className="text-gray-600 text-xs">
-              {format(parseISO(postData.date), "d. MMMM uuu")}
+              {format(parseISO(postData.creationDate), "d. MMMM uuu")}
             </div>
           </div>
 
@@ -33,7 +33,7 @@ export default function Post({ postData }) {
 }
 
 export async function getStaticProps({ params }) {
-  const postData = await getPostData(params.id);
+  const postData = await getPost(params.id);
   return {
     props: {
       postData,
@@ -43,7 +43,7 @@ export async function getStaticProps({ params }) {
 
 export async function getStaticPaths() {
   const allPosts = await getPostsFromContentful();
-  const paths = allPosts.map(p => `/posts/${p.fields.id}`);
+  const paths = allPosts.map(p => `/blog/${p.fields.id}`);
   return {
     paths: paths,
     fallback: true,
