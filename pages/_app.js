@@ -9,8 +9,8 @@ function App({ Component, pageProps }) {
         <h1 className="md:text-4xl text-xl font-bold text-center gradient-text">
           kuda.ai | code. guitar. life.
         </h1>
-        <nav className="my-4">
-          <ul className="flex flex-row justify-center space-x-4 underline">
+        <nav className="my-4 mt-10">
+          <ul className="flex flex-row justify-center space-x-6 underline">
             <li>
               <Link href="/">
                 <a>Blog</a>
