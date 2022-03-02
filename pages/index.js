@@ -15,7 +15,7 @@ export default function Home(props) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="space-y-4">
+      <main className="space-y-4 mt-16">
         <ul className="blog-posts-container flex flex-row flex-wrap justify-center items-center">
           {props.allPostsData.map((post) => (
             <BlogPostPreviewCard
