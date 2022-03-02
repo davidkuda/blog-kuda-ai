@@ -1,6 +1,6 @@
 import Head from "next/head";
 
-import { getPostsFromContentful } from "../lib/contentful_api";
+import { getAllPosts } from "../lib/contentful_api";
 import BlogPostPreviewCard from "../components/BlogPostPreviewCard";
 
 export default function Home(props) {
@@ -33,7 +33,7 @@ export default function Home(props) {
 }
 
 export async function getStaticProps() {
-  const allPostsData = await getPostsFromContentful();
+  const allPostsData = await getAllPosts();
   return {
     props: {
       allPostsData,

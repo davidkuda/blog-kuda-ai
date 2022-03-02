@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { format, parseISO } from "date-fns";
 
-import { getPostsFromContentful, getPost } from "../../lib/contentful_api";
+import { getAllPosts, getPost } from "../../lib/contentful_api";
 
 export default function Post({ postData }) {
   return (
@@ -42,7 +42,7 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-  const allPosts = await getPostsFromContentful();
+  const allPosts = await getAllPosts();
   const paths = allPosts.map(p => `/blog/${p.fields.id}`);
   return {
     paths: paths,
