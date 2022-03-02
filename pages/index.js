@@ -4,7 +4,6 @@ import { getAllPosts } from "../lib/contentful_api";
 import BlogPostPreviewCard from "../components/BlogPostPreviewCard";
 
 export default function Home(props) {
-  console.log(props);
   return (
     <div>
       <Head>
