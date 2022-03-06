@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import "../styles/globals.css";
+// import "../styles/prism.css";
 
 function App({ Component, pageProps }) {
   return (
@@ -19,6 +20,11 @@ function App({ Component, pageProps }) {
             <li>
               <Link href="/about">
                 <a>About</a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/cv">
+                <a>CV</a>
               </Link>
             </li>
           </ul>
