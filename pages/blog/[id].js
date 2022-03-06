@@ -1,17 +1,13 @@
-import Head from "next/head";
 import { format, parseISO } from "date-fns";
 
+import Headers from "../../components/Headers";
 import { getAllPosts, getPost } from "../../lib/contentful_api";
 
 export default function Post({ postData }) {
   return (
     <>
+      <Headers title={postData.title} description={postData.description} />
       <div>
-        <Head>
-          <title>{postData.title}</title>
-          <meta name="description" content={postData.description} />
-          <link rel="icon" href="/favicon.ico" />
-        </Head>
         <div className="flex flex-col md:items-center">
           <main className="prose prose-sm md:prose-base">
             <div className="mb-4">
