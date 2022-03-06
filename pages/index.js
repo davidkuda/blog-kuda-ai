@@ -1,6 +1,7 @@
 import Headers from "../components/Headers";
 import { getAllPosts } from "../lib/contentful_api";
 import BlogPostPreviewCard from "../components/BlogPostPreviewCard";
+import Footer from "../components/Footer";
 
 export default function Home(props) {
   return (
@@ -18,6 +19,7 @@ export default function Home(props) {
           ))}
         </ul>
       </main>
+      <Footer />
     </div>
   );
 }

@@ -1,7 +1,8 @@
 import Image from "next/image";
 
-import Headers from "../components/Headers"
+import Headers from "../components/Headers";
 import { getAboutPageContent } from "../lib/contentful_api";
+import Footer from "../components/Footer";
 
 export default function About(props) {
   var img = "https://images.ctfassets.net/pedj0c0bs6fa/7dr3gvDG0rlRZofUmDvJWx/00d13a6a2a23a749f46fd13cd7d4e057/DKU.jpg?w=800";
@@ -14,6 +15,7 @@ export default function About(props) {
           <div dangerouslySetInnerHTML={{ __html: props.aboutPageContent }} />
       </main>
       </div>
+    <Footer />
     </div>
   );
 }
