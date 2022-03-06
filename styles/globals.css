@@ -49,15 +49,23 @@
     @apply font-medium leading-tight text-4xl mt-0 mb-2;
   }
 
+  h3 {
+    @apply gradient-text text-lg md:text-2xl font-light;
+  }
+
+  ul {
+    @apply simple-list;
+  }
+
+  ul.simple-list {
+    @apply list-disc pl-6 mb-3;
+  }
+
   img {
     @apply py-6;
   }
 
   p {
     @apply mb-6;
-  }
-
-  ul.simple-list {
-    @apply list-disc pl-6 mb-3;
   }
 }
