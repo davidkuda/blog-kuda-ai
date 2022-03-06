@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 import Headers from "../components/Headers";
-import { getAboutPageContent } from "../lib/contentful_api";
+import { getMarkdownContent } from "../lib/contentful_api";
 import Footer from "../components/Footer";
 
 export default function About(props) {
@@ -23,7 +23,7 @@ export default function About(props) {
 export async function getStaticProps() {
   return {
     props: {
-      "aboutPageContent": await getAboutPageContent(),
+      "aboutPageContent": await getMarkdownContent("about_page"),
     },
   };
 }
