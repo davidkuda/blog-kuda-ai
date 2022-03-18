@@ -7,13 +7,17 @@ import Footer from "../components/Footer";
 export default function About(props) {
   return (
     <div>
-      <Headers title="About | kuda.ai" url_endpoint="about" />
+      <Headers
+        title="About | kuda.ai"
+        url_endpoint="about"
+        img="https://images.ctfassets.net/pedj0c0bs6fa/6M0SALWnTnYGur0iA4t4SP/8fb4d909051af28e5e1656c23d6badac/kudas_cropped.jpg"
+      />
       <div className="flex flex-col md:items-center">
         <main className="prose text-sm md:text-base">
           <div dangerouslySetInnerHTML={{ __html: props.aboutPageContent }} />
-      </main>
+        </main>
       </div>
-    <Footer />
+      <Footer />
     </div>
   );
 }
@@ -21,7 +25,7 @@ export default function About(props) {
 export async function getStaticProps() {
   return {
     props: {
-      "aboutPageContent": await getMarkdownContent("about_page"),
+      aboutPageContent: await getMarkdownContent("about_page"),
     },
   };
 }
