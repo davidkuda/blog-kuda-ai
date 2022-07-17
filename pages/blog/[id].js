@@ -30,20 +30,11 @@ export default function Post({ postData }) {
   );
 }
 
-export async function getStaticProps({ params }) {
+export async function getServerSideProps({ params }) {
   const postData = await getPost(params.id);
   return {
     props: {
       postData,
     },
-  };
-}
-
-export async function getStaticPaths() {
-  const allPosts = await getAllPosts();
-  const paths = allPosts.map((p) => `/blog/${p.fields.id}`);
-  return {
-    paths: paths,
-    fallback: false,
   };
 }

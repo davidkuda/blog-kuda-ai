@@ -16,7 +16,7 @@ export default function About(props) {
   );
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   return {
     props: {
       "aboutPageContent": await getMarkdownContent("cv"),
