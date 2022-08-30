@@ -8,6 +8,8 @@ export default function Post({ postData }) {
     title: postData.title,
     description: postData.description,
   };
+  var createdAt = format(parseISO(postData.createdAt), "d. MMMM uuu");
+  var updatedAt = format(parseISO(postData.updatedAt), "d. MMMM uuu");
   return (
     <>
       <Headers headers={headers} />
@@ -20,7 +22,8 @@ export default function Post({ postData }) {
               </h2>
 
               <div className="text-gray-600 text-xs">
-                {format(parseISO(postData.creationDate), "d. MMMM uuu")}
+                created at {createdAt},
+                { createdAt === updatedAt ? "" : " last update " + updatedAt }
               </div>
             </div>
 
