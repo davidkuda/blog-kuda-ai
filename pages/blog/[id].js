@@ -4,9 +4,13 @@ import Headers from "../../components/Headers";
 import { getAllPosts, getPost } from "../../lib/contentful_api";
 
 export default function Post({ postData }) {
+  var headers = {
+    title: postData.title,
+    description: postData.description,
+  };
   return (
     <>
-      <Headers title={postData.title} description={postData.description} />
+      <Headers headers={headers} />
       <div>
         <div className="flex flex-col md:items-center">
           <main className="prose prose-sm md:prose-base">
