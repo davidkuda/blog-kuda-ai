@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 import Headers from "../components/Headers";
 import SimpleMarkdownPage from "../components/SimpleMarkdownPage";
 import { getPageContent } from "../lib/contentful_api";
