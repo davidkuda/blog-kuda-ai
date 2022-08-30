@@ -9,6 +9,7 @@ export default function About({ data }) {
       <Headers
         title={data.headers.title}
         url_endpoint={data.headers.urlEndpoint}
+        img={data.headers.previewImg}
       />
       <SimpleMarkdownPage markdownContent={data.mainContent} />
       <Footer />
