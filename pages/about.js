@@ -3,7 +3,7 @@ import SimpleMarkdownPage from "../components/SimpleMarkdownPage";
 import { getPageContent } from "../lib/contentful_api";
 import Footer from "../components/Footer";
 
-export default function About({data}) {
+export default function About({ data }) {
   return (
     <div>
       <Headers headers={data.headers} />

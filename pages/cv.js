@@ -16,7 +16,7 @@ export default function About({ data }) {
 export async function getServerSideProps() {
   return {
     props: {
-      "data": await getPageContent("cv"),
+      data: await getPageContent("cv"),
     },
   };
 }
