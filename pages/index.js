@@ -6,7 +6,7 @@ import Footer from "../components/Footer";
 export default function Home(props) {
   return (
     <div>
-      <Headers title="kuda.ai | code. guitar. life." />
+      <Headers headers={{ title: "kuda.ai | code. guitar. life." }} />
       <main className="space-y-4 mt-16">
         <ul className="blog-posts-container flex flex-row flex-wrap justify-center items-center">
           {props.allPostsData.map((post) => (
