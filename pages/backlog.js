@@ -1,6 +1,6 @@
 import Headers from "../components/Headers";
 import Footer from "../components/Footer";
-import { getMarkdownContent } from "../lib/contentful_api";
+import { getPageContent } from "../lib/contentful_api";
 
 export default function About(props) {
   return (
@@ -22,7 +22,7 @@ export default function About(props) {
 export async function getServerSideProps() {
   return {
     props: {
-      pageContent: await getMarkdownContent("backlog"),
+      pageContent: await getPageContent("backlog"),
     },
   };
 }
