@@ -6,11 +6,7 @@ import { getPageContent } from "../lib/contentful_api";
 export default function About({ data }) {
   return (
     <div>
-      <Headers
-        title={data.headers.title}
-        url_endpoint={data.headers.urlEndpoint}
-        img={data.headers.previewImg}
-      />
+      <Headers headers={data.headers} />
       <SimpleMarkdownPage markdownContent={data.mainContent} />
       <Footer />
     </div>
