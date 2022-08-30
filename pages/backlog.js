@@ -1,6 +1,6 @@
 import Headers from "../components/Headers";
-import { getMarkdownContent } from "../lib/contentful_api";
 import Footer from "../components/Footer";
+import { getMarkdownContent } from "../lib/contentful_api";
 
 export default function About(props) {
   return (
