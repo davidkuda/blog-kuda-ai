@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 import Headers from "../components/Headers";
-import { getMarkdownContent } from "../lib/contentful_api";
+import { getPageContent } from "../lib/contentful_api";
 import Footer from "../components/Footer";
 
 export default function About(props) {
@@ -14,7 +14,7 @@ export default function About(props) {
       />
       <div className="flex flex-col md:items-center">
         <main className="prose text-sm md:text-base">
-          <div dangerouslySetInnerHTML={{ __html: props.aboutPageContent }} />
+          <div dangerouslySetInnerHTML={{ __html: props.pageContent }} />
         </main>
       </div>
       <Footer />
@@ -25,7 +25,7 @@ export default function About(props) {
 export async function getServerSideProps() {
   return {
     props: {
-      aboutPageContent: await getMarkdownContent("about_page"),
+      pageContent: await getPageContent("about_page"),
     },
   };
 }
