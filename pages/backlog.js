@@ -3,11 +3,14 @@ import SimpleMarkdownPage from "../components/SimpleMarkdownPage";
 import Footer from "../components/Footer";
 import { getPageContent } from "../lib/contentful_api";
 
-export default function About(props) {
+export default function About({ data }) {
   return (
     <div>
-      <Headers title={props.headerTitle} url_endpoint={props.urlEndpoint} />
-      <SimpleMarkdownPage markdownContent={props.pageContent} />
+      <Headers
+        title={data.headers.title}
+        url_endpoint={data.headers.urlEndpoint}
+      />
+      <SimpleMarkdownPage markdownContent={data.mainContent} />
       <Footer />
     </div>
   );
@@ -16,7 +19,7 @@ export default function About(props) {
 export async function getServerSideProps() {
   return {
     props: {
-      pageContent: await getPageContent("backlog"),
+      data: await getPageContent("backlog"),
     },
   };
 }
