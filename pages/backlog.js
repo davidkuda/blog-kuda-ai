@@ -1,4 +1,5 @@
 import Headers from "../components/Headers";
+import SimpleMarkdownPage from "../components/SimpleMarkdownPage";
 import Footer from "../components/Footer";
 import { getPageContent } from "../lib/contentful_api";
 
@@ -9,11 +10,7 @@ export default function About(props) {
         title="Backlog | kuda.ai"
         url_endpoint="backlog"
       />
-      <div className="flex flex-col md:items-center">
-        <main className="prose text-sm md:text-base">
-          <div dangerouslySetInnerHTML={{ __html: props.pageContent }} />
-        </main>
-      </div>
+      <SimpleMarkdownPage markdownContent={props.pageContent} />
       <Footer />
     </div>
   );
