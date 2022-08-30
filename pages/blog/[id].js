@@ -1,7 +1,7 @@
 import { format, parseISO } from "date-fns";
 
 import Headers from "../../components/Headers";
-import { getAllPosts, getPost } from "../../lib/contentful_api";
+import { getPost } from "../../lib/contentful_api";
 
 export default function Post({ postData }) {
   var headers = {
