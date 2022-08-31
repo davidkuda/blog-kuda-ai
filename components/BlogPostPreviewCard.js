@@ -18,7 +18,6 @@ export default function BlogPostPreviewCard({
           <a className="text-l font-medium">{title}</a>
           <br />
           <span className="text-gray-600 text-xs">
-            {/* <span className="bg-orange-400 p-0.5 mr-2 rounded-md text-white">{category}</span>{" "} */}
             <span className="text-orange-600 font-bold">{category}</span>{" "}
             <span>
               {createdAt === updatedAt
