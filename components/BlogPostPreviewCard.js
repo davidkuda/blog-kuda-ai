@@ -5,6 +5,7 @@ export default function BlogPostPreviewCard({
   id,
   title,
   category,
+  tags,
   createdAt,
   updatedAt,
 }) {
@@ -17,13 +18,17 @@ export default function BlogPostPreviewCard({
           <a className="text-l font-medium">{title}</a>
           <br />
           <span className="text-gray-600 text-xs">
-            {/* <span className="bg-orange-500 p-1 rounded-md text-white">{category}</span>{" "} */}
+            {/* <span className="bg-orange-400 p-0.5 mr-2 rounded-md text-white">{category}</span>{" "} */}
             <span className="text-orange-600 font-bold">{category}</span>{" "}
             <span>
               {createdAt === updatedAt
                 ? createdAt
                 : `${createdAt} (created), ${updatedAt} (last update)`}
             </span>
+            <br />
+            {tags.map((tag) => (
+              <span className="mr-2">{"#" + tag}</span>
+            ))}
           </span>
         </div>
       </li>
