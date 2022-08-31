@@ -14,6 +14,7 @@ export default function Home(props) {
               key={post.fields.id}
               id={post.fields.id}
               title={post.fields.title}
+              category={post.fields.category}
               createdAt={post.sys.createdAt}
               updatedAt={post.sys.updatedAt}
             />
