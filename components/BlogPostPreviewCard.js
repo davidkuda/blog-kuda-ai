@@ -12,10 +12,12 @@ export default function BlogPostPreviewCard({
   var createdAt = format(parseISO(createdAt), "MMMM uuu");
   var updatedAt = format(parseISO(updatedAt), "MMMM uuu");
   return (
-    <Link href={`blog/${id}`}>
-      <li className="cursor-pointer w-2/3 mx-2 my-3">
+    <>
+      <li className="w-2/3 mx-2 my-3">
         <div>
-          <a className="text-l font-medium">{title}</a>
+          <Link href={`blog/${id}`}>
+            <a className="cursor-pointer text-l font-medium">{title}</a>
+          </Link>
           <br />
           <span className="text-gray-600 text-xs">
             <span className="text-orange-600 font-bold">{category}</span>{" "}
@@ -31,6 +33,6 @@ export default function BlogPostPreviewCard({
           </span>
         </div>
       </li>
-    </Link>
+    </>
   );
 }
