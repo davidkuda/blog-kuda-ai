@@ -7,7 +7,7 @@ export default function Post({ postData }) {
   var headers = {
     title: postData.title,
     description: postData.description,
-    previewImage: postData.previewImage,
+    previewImage: postData.previewImage.url,
     urlEndpoint: `blog/${postData.title}`
   };
   var createdAt = format(parseISO(postData.createdAt), "d. MMMM uuu");
