@@ -1,6 +1,7 @@
 import Head from "next/head";
 
 export default function Headers(props) {
+
   var headers = props.headers;
   if (headers.title === null) {
     headers.title = "kuda.ai";
