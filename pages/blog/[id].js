@@ -7,6 +7,7 @@ export default function Post({ postData }) {
   var headers = {
     title: postData.title,
     description: postData.description,
+    previewImg: postData.previewImage,
   };
   var createdAt = format(parseISO(postData.createdAt), "d. MMMM uuu");
   var updatedAt = format(parseISO(postData.updatedAt), "d. MMMM uuu");
