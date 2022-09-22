@@ -27,7 +27,7 @@ export default function Headers(props) {
         property="og:url"
         content={"https://www.kuda.ai/" + headers.urlEndpoint}
       />
-      <meta property="og:image" content={headers.previewImg} />
+      <meta property="og:image" content={headers.previewImage} />
       <link rel="icon" href="/favicon.ico" />
     </Head>
   );
