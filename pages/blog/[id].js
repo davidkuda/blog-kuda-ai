@@ -10,7 +10,7 @@ export default function Post({ postData }) {
     title: postData.title,
     description: postData.description,
     previewImage: postData.previewImage,
-    urlEndpoint: `blog/${postData.title}`
+    urlEndpoint: `blog/${postData.id}`
   };
 
   var createdAt = format(parseISO(postData.createdAt), "d. MMMM uuu");
