@@ -1,15 +1,21 @@
 import { format, parseISO } from "date-fns";
 
 import Headers from "../../components/Headers";
-import { getPost } from "../../lib/contentful_api";
+import { getPost, getAssetUrlById } from "../../lib/contentful_api";
+
 
 export default function Post({ postData }) {
+
+  var previewImageAssetId = postData.previewImage.sys.id
+  var previewImageUrl = getAssetUrlById(previewImageAssetId)
+
   var headers = {
     title: postData.title,
     description: postData.description,
-    previewImage: postData.previewImage.url,
+    previewImage: previewImageUrl,
     urlEndpoint: `blog/${postData.title}`
   };
+
   var createdAt = format(parseISO(postData.createdAt), "d. MMMM uuu");
   var updatedAt = format(parseISO(postData.updatedAt), "d. MMMM uuu");
   return (
