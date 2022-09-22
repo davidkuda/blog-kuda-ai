@@ -6,13 +6,10 @@ import { getPost, getAssetUrlById } from "../../lib/contentful_api";
 
 export default function Post({ postData }) {
 
-  var previewImageAssetId = postData.previewImage.sys.id
-  var previewImageUrl = getAssetUrlById(previewImageAssetId)
-
   var headers = {
     title: postData.title,
     description: postData.description,
-    previewImage: previewImageUrl,
+    previewImage: postData.previewImage,
     urlEndpoint: `blog/${postData.title}`
   };
 
@@ -46,7 +43,14 @@ export default function Post({ postData }) {
 }
 
 export async function getServerSideProps({ params }) {
+
   const postData = await getPost(params.id);
+
+  var previewImageAssetId = postData.previewImage.sys.id;
+  var previewImageUrl = "https:" + await getAssetUrlById(previewImageAssetId);
+
+  postData.previewImage = previewImageUrl;
+
   return {
     props: {
       postData,
