@@ -1,5 +1,7 @@
 import { format, parseISO } from "date-fns";
 
+import 'highlight.js/styles/tokyo-night-dark.css'
+
 import Headers from "../../components/Headers";
 import { getPost, getAssetUrlById } from "../../lib/contentful_api";
 
