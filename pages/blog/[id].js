@@ -46,10 +46,12 @@ export async function getServerSideProps({ params }) {
 
   const postData = await getPost(params.id);
 
-  var previewImageAssetId = postData.previewImage.sys.id;
-  var previewImageUrl = "https:" + await getAssetUrlById(previewImageAssetId);
-
-  postData.previewImage = previewImageUrl;
+  if ("previewImage" in postData) {
+    var previewImageAssetId = postData.previewImage.sys.id;
+    var previewImageUrl =
+      "https:" + (await getAssetUrlById(previewImageAssetId));
+    postData.previewImage = previewImageUrl;
+  }
 
   return {
     props: {
