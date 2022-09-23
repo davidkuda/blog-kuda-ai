@@ -24,7 +24,7 @@ export default function BlogPostPreviewCard({
             <span>
               {createdAt === updatedAt
                 ? createdAt
-                : `${createdAt} (created), ${updatedAt} (last update)`}
+                : `${updatedAt} (last update), ${createdAt} (created)`}
             </span>
             <br />
             {tags.map((tag) => (
