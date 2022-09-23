@@ -15,8 +15,8 @@ export default function Post({ postData }) {
     urlEndpoint: `blog/${postData.id}`
   };
 
-  var createdAt = format(parseISO(postData.createdAt), "d. MMMM uuu");
-  var updatedAt = format(parseISO(postData.updatedAt), "d. MMMM uuu");
+  var createdAt = format(parseISO(postData.createdAt), "MMMM uuu");
+  var updatedAt = format(parseISO(postData.updatedAt), "MMMM uuu");
   return (
     <>
       <Headers headers={headers} />
@@ -29,8 +29,8 @@ export default function Post({ postData }) {
               </h2>
 
               <div className="text-gray-600 text-xs">
-                created at {createdAt},
-                { createdAt === updatedAt ? "" : " last update " + updatedAt }
+                created at {createdAt}
+                { createdAt === updatedAt ? "" : ", last update " + updatedAt }
               </div>
             </div>
 
