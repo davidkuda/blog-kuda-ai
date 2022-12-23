@@ -15,13 +15,13 @@ function App({ Component, pageProps }) {
         <nav className="my-4 mt-10">
           <ul className="flex flex-row justify-center space-x-6 underline">
             <li>
-              <Link href="/blog">
-                <a>Blog</a>
+              <Link href="/about">
+                <a>About</a>
               </Link>
             </li>
             <li>
-              <Link href="/about">
-                <a>About</a>
+              <Link href="/blog">
+                <a>Blog</a>
               </Link>
             </li>
             <li>
