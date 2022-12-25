@@ -17,6 +17,24 @@ export default function Home(props) {
             <br />
           </h2>
         </div>
+        <div className="flex justify-center">
+          <a
+            className="inline mx-4"
+            href="https://www.linkedin.com/in/davidkuda/"
+            target="_blank"
+          >
+            <img className="w-10 inline mx-2" src={linkedinIcon} />
+            <span className="underline">Linkedin</span>
+          </a>
+          <a
+            className="mx-4"
+            href="https://github.com/davidkuda"
+            target="_blank"
+          >
+            <img className="w-10 inline mx-2" src={githubIcon} />
+            <span className="underline">GitHub</span>
+          </a>
+        </div>
       </main>
       <Footer />
     </div>
