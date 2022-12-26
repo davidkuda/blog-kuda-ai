@@ -12,7 +12,7 @@ export default function Home() {
       <Headers headers={{ title: "kuda.ai | code. guitar. life." }} />
       <main className="space-y-4 mt-16">
         <div class="box" className="flex justify-center ">
-          <h2 class={"text-center text-5xl animate-pulse "}>
+          <h2 className="text-center text-5xl tracking-wide rainbow-text">
             David Kuda
             <br />
             Software Engineer

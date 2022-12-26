@@ -37,6 +37,34 @@
     -webkit-text-fill-color: transparent;
   }
 
+  .rainbow-text {
+    /* Following https://www.youtube.com/watch?v=oK3uoDeQIlU */
+    background-image: repeating-linear-gradient(
+      45deg,
+      #ff0000 0%,
+      #ffff00 8.3%,
+      #00ff00 16.6%,
+      #00ffff 24.9%,
+      #0000ff 33.2%,
+      #ff00ff 41.5%,
+      #ff0000 50%
+    );
+    background-size: 200vw 200vh;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    animation: loop 5s infinite linear;
+  }
+
+  @keyframes loop {
+    0% {
+      background-position-x: 0;
+    }
+    100% {
+      background-position-x: 200vw;
+    }
+  }
+
+
   a {
     /* @apply underline; */
   }
