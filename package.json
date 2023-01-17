@@ -27,6 +27,7 @@
     "remark-slug": "^7.0.1",
     "remark-toc": "^8.0.1",
     "standard": "^16.0.4",
+    "swr": "^2.0.0",
     "unified": "^10.1.2",
     "unified-stream": "^2.0.0"
   },
