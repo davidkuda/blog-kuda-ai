@@ -29,6 +29,11 @@ function App({ Component, pageProps }) {
                 <a>CV</a>
               </Link>
             </li>
+            <li>
+              <Link href="/covers">
+                <a>Covers</a>
+              </Link>
+            </li>
           </ul>
         </nav>
       </header>
