@@ -1,6 +1,6 @@
-import Headers from "../components/Headers";
-import LoginForm from "../components/LoginForm";
-import Footer from "../components/Footer";
+import Headers from "../../components/Headers";
+import LoginForm from "../../components/LoginForm";
+import Footer from "../../components/Footer";
 
 export default function Login() {
   var headers = {};
