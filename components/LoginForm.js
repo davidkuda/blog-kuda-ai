@@ -1,5 +1,14 @@
 export default function LoginForm(props) {
   return (
+    <form onSubmit={logSongs}>
+      <label htmlFor="email">email</label>
+      <input id="email"></input>
+      <br />
+      <label htmlFor="password">password</label>
+      <input id="password"></input>
+      <br />
+      <button>Login</button>
+    </form>
     <div className="relative py-3 sm:max-w-xl sm:mx-auto">
       <div className="relative px-4 py-10 bg-white shadow-lg sm:rounded-3xl sm:p-20">
         <div className="max-w-md mx-auto">
