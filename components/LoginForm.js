@@ -27,15 +27,25 @@ function Copyright(props) {
 const theme = createTheme();
 
 export default function SignIn() {
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
     const a = process.env.NEXT_PUBLIC_LYRICSAPI_BASE_URL;
-    // handle signin
+    var res = await fetch(a + "/v1/tokens/authentication", {
+      "method": "POST",
+      "cache": "no-cache",
+      headers: {
+      "Content-Type": "application/json",
+    },
+    "body": JSON.stringify({
+        "email": data.get("email"),
+        "password": data.get("password"),
+      }),
+    })
+
+    var tknEnvelope = await res.json()
+    var token = tknEnvelope.authentication_token
+    console.log(token)
   };
 
   return (
