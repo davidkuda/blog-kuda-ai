@@ -3,7 +3,7 @@ import Link from "next/link";
 import Headers from "../components/Headers";
 import Footer from "../components/Footer";
 
-export default function Home(props) {
+export default function Covers(props) {
   return (
     <div>
       <Headers headers={{ title: "kuda.ai | Guitar Songs I like to play" }} />
@@ -29,10 +29,6 @@ export async function getServerSideProps() {
   var lyricsAPIURL = "http://127.0.0.1:8032/songs";
   var res = await fetch(lyricsAPIURL, {
     method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${process.env.LYRICSAPI_PROD_TOKEN}`,
-    },
   });
 
   var songs = await res.json();
