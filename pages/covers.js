@@ -26,8 +26,8 @@ export default function Covers(props) {
 }
 
 export async function getServerSideProps() {
-  var lyricsAPIURL = "http://127.0.0.1:8032/songs";
-  var res = await fetch(lyricsAPIURL, {
+  var lyricsAPIURL = process.env.NEXT_PUBLIC_LYRICSAPI_BASE_URL
+  var res = await fetch(lyricsAPIURL + "/songs", {
     method: "GET",
   });
 

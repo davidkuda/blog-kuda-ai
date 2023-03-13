@@ -26,10 +26,10 @@ export default function CoverSong({ song }) {
 
 export async function getServerSideProps(context) {
   var songID = context.params.song;
-  var lyricsAPIEndpoint = "http://127.0.0.1:8032/songs/" + songID;
-  var res = await fetch(lyricsAPIEndpoint);
+  var a = process.env.NEXT_PUBLIC_LYRICSAPI_BASE_URL
+  var res = await fetch(a + "/songs/" + songID);
   var song = await res.json();
-  
+
   song.chords = await parseMarkdownWithoutTOC(song.chords)
   song.lyrics = await parseMarkdownWithoutTOC(song.lyrics)
 
