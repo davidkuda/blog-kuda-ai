@@ -1,6 +1,6 @@
 export default function NewSongForm() {
   return (
-    <div class="container mx-auto px-4 w-3/5">
+    <div class="container mx-auto px-4 w-100">
       <form autoComplete="off" onSubmit={uploadSong}>
         <h3 className="mt-20 mb-5">New Song:</h3>
         <FormRowFull id="songID" labelText="Song ID" type="text" />
