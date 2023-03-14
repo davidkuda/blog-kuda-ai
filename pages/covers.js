@@ -21,7 +21,7 @@ export default function Covers(props) {
           ))}
         </ul>
       </main>
-      {props.token ? <NewSongForm /> : ""}
+      {props.token ? <NewSongForm token={props.token} /> : ""}
       <Footer />
     </div>
   );
