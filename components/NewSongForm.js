@@ -5,12 +5,8 @@ export default function NewSongForm() {
         <h3 className="mt-20 mb-5">New Song:</h3>
         <FormRowFull id="songID" labelText="Song ID" type="text" />
         <FormRowHalves
-          id1="songName"
-          labelText1="Song Name"
-          type1="text"
-          id2="artist"
-          labelText2="Artist"
-          type2="text"
+          id1="songName" labelText1="Song Name" type1="text"
+          id2="artist" labelText2="Artist" type2="text"
         />
         <TextArea id="chords" rows="2" label="Chords" />
         <TextArea id="lyrics" rows="4" label="Lyrics" />
