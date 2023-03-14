@@ -18,9 +18,35 @@ export default function NewSongForm() {
   )
 }
 
-function uploadSong(event) {
+async function uploadSong(event) {
   event.preventDefault()
-  console.log({ event })
+  var f = event.target
+  var data = {
+    "id": f.songID.value,
+    "artist": f.artist.value,
+    "name": f.name.value,
+    "chords": f.chords.value,
+    "lyrics": f.lyrics.value,
+    "copyright": f.copyright?.value,
+  }
+
+  var headers = {
+      "Content-Type": "application/json",
+      "credentials": "include",
+      "Authorization": `Bearer ${f.dataset.token}`,
+  }
+
+  console.log({headers})
+
+  var lyricsAPIURL = process.env.NEXT_PUBLIC_LYRICSAPI_BASE_URL
+  var res = await fetch(lyricsAPIURL + "/songs", {
+    "method": "POST",
+    headers: headers,
+    "body": JSON.stringify(data),
+  })
+
+  console.log(res)
+  // TODO: show success or fail with reasion (e.g. song exists already)
 }
 
 function FormRowFull({ type, id, labelText }) {
