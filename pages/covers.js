@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import Headers from "../components/Headers";
+import NewSongForm from "../components/NewSongForm";
 import Footer from "../components/Footer";
 
 export default function Covers(props) {
@@ -20,6 +21,7 @@ export default function Covers(props) {
           ))}
         </ul>
       </main>
+      {props.token ? <NewSongForm /> : ""}
       <Footer />
     </div>
   );
