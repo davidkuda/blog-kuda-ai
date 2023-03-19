@@ -2,7 +2,6 @@ import * as React from 'react';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
-import Link from '@mui/material/Link';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
@@ -12,38 +11,37 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 function Copyright(props) {
   return (
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
-      {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
-        kuda.ai
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
+      {'Copyright © '} kuda.ai {new Date().getFullYear()}
     </Typography>
   );
 }
 
 const theme = createTheme();
 
-export default function SignIn() {
+export default function SignIn(props) {
   const handleSubmit = async (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     const a = process.env.NEXT_PUBLIC_LYRICSAPI_BASE_URL;
-    var res = await fetch(a + "/v1/tokens/authentication", {
+    var res = await fetch(a + "/signin", {
       "method": "POST",
       "cache": "no-cache",
       headers: {
-      "Content-Type": "application/json",
-    },
-    "body": JSON.stringify({
-        "email": data.get("email"),
+        "Content-Type": "application/json",
+      },
+      "body": JSON.stringify({
+        "userName": data.get("user-name"),
         "password": data.get("password"),
       }),
     })
 
-    var tknEnvelope = await res.json()
-    var token = tknEnvelope.authentication_token
-    console.log(token)
+    if (res.status == 201) {
+      props.setFailedAttempt = true
+    }
+
+    if (res.status == 401) {
+      props.setFailedAttempt = false
+    }
   };
 
   return (
@@ -66,9 +64,9 @@ export default function SignIn() {
               margin="normal"
               required
               fullWidth
-              id="email"
-              label="Email Address"
-              name="email"
+              id="user-name"
+              label="User Name"
+              name="user-name"
               autoComplete="email"
               autoFocus
             />
