@@ -36,11 +36,12 @@ export default function SignIn(props) {
     })
 
     if (res.status == 201) {
-      props.setFailedAttempt = true
+      props.setFailedAttempt(false)
+      props.setIsLoggedIn(true)
     }
 
     if (res.status == 401) {
-      props.setFailedAttempt = false
+      props.setFailedAttempt(true)
     }
   };
 

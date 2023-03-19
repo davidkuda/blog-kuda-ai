@@ -6,18 +6,32 @@ import Footer from "../../components/Footer";
 
 
 export default function Login(props) {
-  console.log(props)
   let [failedAttempt, setFailedAttempt] = useState()
+  let [isLoggedIn, setIsLoggedIn] = useState(false)
+  let [userName, setUserName] = useState()
+
+  if (props.activeSession == true) {
+    setIsLoggedIn(true)
+    setUserName(props.user)
+  }
+
   var headers = {};
 
+  var loginForm = (
+    <LoginForm
+      setUserName={setUserName}
+      setFailedAttempt={setFailedAttempt}
+      setIsLoggedIn={setIsLoggedIn}
+    />)
+
   var wrongCreds = <p className="text-center my-20 text-red-600">Wrong Credentials!</p>
-  var loggedIn = <p className="text-center my-20">You are logged in as {props.user} :)</p>
+  var loggedIn = <p className="text-center my-20">You are logged in as {userName} :)</p>
 
   return (
     <div>
       <Headers headers={headers} />
       {failedAttempt ? wrongCreds : null}
-      {props.activeSession ? loggedIn : <LoginForm setFailedAttempt={setFailedAttempt} />}
+      {isLoggedIn ? loggedIn : loginForm}
       <Footer />
     </div>
   );
@@ -32,8 +46,6 @@ export async function getServerSideProps() {
   var res = await fetch(lyricsAPIURL + "/session", {
     method: "GET",
   });
-
-  console.log({ res })
 
   if (res.status == 401) {
     activeSession = false
