@@ -14,7 +14,15 @@ export default function Login() {
 
   var headers = {};
 
-  var loggedIn = <p className="text-center my-20">You are logged in as {userName} :)</p>
+  var loggedIn = (
+    <div className="flex flex-col items-center">
+      <p className="text-center my-20">You are logged in as {userName} :)</p>
+      <button
+        onClick={logOut}
+        className="w-1/5 px-4 py-1 gradient-fill rounded-md drop-shadow text-white hover:drop-shadow-lg hover:gradient-fill-inverse active:gradient-fill"
+      >log out</button>
+    </div>
+  )
 
   var loginForm = (
     <LoginForm
@@ -54,4 +62,8 @@ async function checkLoginState(setIsLoggedIn, setUserName) {
     let sessionData = await res.json()
     setUserName(sessionData.session)
   }
+}
+
+async function logOut(event) {
+  console.log({ event })
 }
