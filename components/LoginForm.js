@@ -26,6 +26,7 @@ export default function SignIn(props) {
     var res = await fetch(a + "/signin", {
       "method": "POST",
       "cache": "no-cache",
+      "credentials": "include",
       headers: {
         "Content-Type": "application/json",
       },
