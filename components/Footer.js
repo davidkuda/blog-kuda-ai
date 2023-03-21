@@ -8,7 +8,7 @@ export default function BlogPostPreviewCard() {
   return (
     <footer className="mt-8 flex items-center justify-center align-center">
       <p className="text-xs">
-        Made with ❤️ in Berlin in 2021-2022 | 
+        Made with ❤️ in Berlin since 2021 | 
         <a className="inline" href="https://www.linkedin.com/in/davidkuda/" target="_blank">
           <img className="w-3.5 inline mx-1" src={linkedinIcon} />
         </a>
