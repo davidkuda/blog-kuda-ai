@@ -5,17 +5,16 @@ import LoginForm from "../../components/LoginForm";
 import Footer from "../../components/Footer";
 
 
-export default function Login(props) {
+export default function Login() {
   let [failedAttempt, setFailedAttempt] = useState()
   let [isLoggedIn, setIsLoggedIn] = useState(false)
   let [userName, setUserName] = useState()
 
-  if (props.activeSession == true) {
-    setIsLoggedIn(true)
-    setUserName(props.user)
-  }
+  checkLoginState(setIsLoggedIn, setUserName)
 
   var headers = {};
+
+  var loggedIn = <p className="text-center my-20">You are logged in as {userName} :)</p>
 
   var loginForm = (
     <LoginForm
@@ -25,7 +24,6 @@ export default function Login(props) {
     />)
 
   var wrongCreds = <p className="text-center my-20 text-red-600">Wrong Credentials!</p>
-  var loggedIn = <p className="text-center my-20">You are logged in as {userName} :)</p>
 
   return (
     <div>
@@ -37,36 +35,23 @@ export default function Login(props) {
   );
 }
 
-export async function getServerSideProps() {
+async function checkLoginState(setIsLoggedIn, setUserName) {
   // check if there is an active session based on cookie
-  let activeSession = false
-  let sessionData = {}
-
   var lyricsAPIURL = process.env.NEXT_PUBLIC_LYRICSAPI_BASE_URL
   var res = await fetch(lyricsAPIURL + "/session", {
     method: "GET",
+    credentials: "include",
+    cache: "no-cache",
   });
 
   if (res.status == 401) {
-    activeSession = false
+    setIsLoggedIn(false)
+    return
   }
 
   if (res.status == 200) {
-    activeSession = true
-    sessionData = await res.json()
+    setIsLoggedIn(true)
+    let sessionData = await res.json()
+    setUserName(sessionData.session)
   }
-
-  if (activeSession) {
-    return {
-      props: {
-        activeSession,
-        user: sessionData.session,
-      },
-    };
-  }
-  return {
-    props: {
-      activeSession,
-    },
-  };
 }
