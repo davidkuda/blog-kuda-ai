@@ -51,6 +51,20 @@
     ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   }
 
+  .gradient-fill-inverse {
+    background: #f37335; /* fallback for old browsers */
+    background: -webkit-linear-gradient(
+      to right,
+      #fdc830
+      #f37335,
+    ); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+      to right,
+      #fdc830
+      #f37335,
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  }
+
   .rainbow-text {
     /* Following https://www.youtube.com/watch?v=oK3uoDeQIlU */
     background-image: repeating-linear-gradient(
