@@ -1,17 +1,21 @@
-import * as React from 'react';
-import Button from '@mui/material/Button';
-import CssBaseline from '@mui/material/CssBaseline';
-import TextField from '@mui/material/TextField';
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
-import Container from '@mui/material/Container';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-
+import * as React from "react";
+import Button from "@mui/material/Button";
+import CssBaseline from "@mui/material/CssBaseline";
+import TextField from "@mui/material/TextField";
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
+import Container from "@mui/material/Container";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 function Copyright(props) {
   return (
-    <Typography variant="body2" color="text.secondary" align="center" {...props}>
-      {'Copyright © '} kuda.ai {new Date().getFullYear()}
+    <Typography
+      variant="body2"
+      color="text.secondary"
+      align="center"
+      {...props}
+    >
+      {"Copyright © "} kuda.ai {new Date().getFullYear()}
     </Typography>
   );
 }
@@ -23,24 +27,33 @@ export default function SignIn(props) {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     const a = process.env.NEXT_PUBLIC_LYRICSAPI_BASE_URL;
+
+    const input = JSON.stringify({
+      userName: data.get("user-name"),
+      password: data.get("password"),
+    });
+
+    console.log("hello");
+    console.log({ input });
+
     var res = await fetch(a + "/signin", {
-      "method": "POST",
-      "cache": "no-cache",
-      "credentials": "include",
+      method: "POST",
+      cache: "no-cache",
+      credentials: "include",
       headers: {
         "Content-Type": "application/json",
       },
-      "body": JSON.stringify({
-        "userName": data.get("user-name"),
-        "password": data.get("password"),
-      }),
-    })
+      body: input,
+    });
+
+    console.log("hello");
+    console.log({ res });
 
     if (res.status == 201) {
-      props.setFailedAttempt(false)
-      props.setIsLoggedIn(true)
+      props.setFailedAttempt(false);
+      props.setIsLoggedIn(true);
     } else {
-      props.setFailedAttempt(true)
+      props.setFailedAttempt(true);
     }
   };
 
@@ -51,15 +64,20 @@ export default function SignIn(props) {
         <Box
           sx={{
             marginTop: 8,
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
           }}
         >
           <Typography component="h1" variant="h5">
             Sign in
           </Typography>
-          <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
+          <Box
+            component="form"
+            onSubmit={handleSubmit}
+            noValidate
+            sx={{ mt: 1 }}
+          >
             <TextField
               margin="normal"
               required
