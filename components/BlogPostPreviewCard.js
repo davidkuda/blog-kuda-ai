@@ -9,8 +9,8 @@ export default function BlogPostPreviewCard({
   createdAt,
   updatedAt,
 }) {
-  var createdAt = format(parseISO(createdAt), "MMMM uuu");
-  var updatedAt = format(parseISO(updatedAt), "MMMM uuu");
+  createdAt = format(parseISO(createdAt), "MMMM uuu");
+  updatedAt = format(parseISO(updatedAt), "MMMM uuu");
   return (
     <>
       <li className="w-2/3 mx-2 my-3">
