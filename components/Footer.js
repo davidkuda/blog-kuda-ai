@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 export default function BlogPostPreviewCard() {
   var linkedinIcon =
     "https://images.ctfassets.net/pedj0c0bs6fa/2h1ZSwhweHvzkxarbhoXYz/a5422792becd785b920b1c6844850679/linkedin_black_logo_icon_147114.png?w=100";

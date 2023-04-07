@@ -1,5 +1,4 @@
 import Headers from "../components/Headers";
-import { getAllPosts } from "../lib/contentful_api";
 import Footer from "../components/Footer";
 
 export default function Home() {

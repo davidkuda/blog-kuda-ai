@@ -12,10 +12,8 @@ export default function Covers(props) {
         <ul className="blog-posts-container flex flex-row flex-wrap justify-center items-center">
           {props.songs.map((song) => (
             <li className="w-2/3 mx-2 my-3" key={song.id}>
-              <Link href={"covers/" + song.id}>
-                <a className="cursor-pointer font-medium underline">
+              <Link href={"covers/" + song.id} className="cursor-pointer font-medium underline">
                   {song.artist}: {song.name}
-                </a>
               </Link>
             </li>
           ))}

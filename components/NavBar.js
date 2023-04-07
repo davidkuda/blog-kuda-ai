@@ -5,29 +5,29 @@ export default function NavBar() {
     <header>
       <h1 className="md:text-4xl text-xl font-bold text-center gradient-text">
         <Link href="/">
-          <a>kuda.ai | code. guitar. life.</a>
+          kuda.ai | code. guitar. life.
         </Link>
       </h1>
       <nav className="my-4 mt-10">
         <ul className="flex flex-row justify-center space-x-6 underline">
           <li>
             <Link href="/about">
-              <a>About</a>
+              About
             </Link>
           </li>
           <li>
             <Link href="/blog">
-              <a>Blog</a>
+              Blog
             </Link>
           </li>
           <li>
             <Link href="/cv">
-              <a>CV</a>
+              CV
             </Link>
           </li>
           <li>
             <Link href="/covers">
-              <a>Covers</a>
+              Covers
             </Link>
           </li>
         </ul>
