@@ -22,8 +22,11 @@ export default function Covers(props) {
         <ul className="blog-posts-container flex flex-row flex-wrap justify-center items-center">
           {props.songs.map((song) => (
             <li className="w-2/3 mx-2 my-3" key={song.id}>
-              <Link href={"covers/" + song.id} className="cursor-pointer font-medium underline">
-                  {song.artist}: {song.name}
+              <Link
+                href={"covers/" + song.id}
+                className="cursor-pointer font-medium underline"
+              >
+                {song.artist}: {song.name}
               </Link>
             </li>
           ))}
@@ -36,7 +39,7 @@ export default function Covers(props) {
 }
 
 export async function getServerSideProps() {
-  var lyricsAPIURL = process.env.NEXT_PUBLIC_LYRICSAPI_BASE_URL
+  var lyricsAPIURL = process.env.NEXT_PUBLIC_LYRICSAPI_BASE_URL;
   var res = await fetch(lyricsAPIURL + "/songs", {
     method: "GET",
   });
