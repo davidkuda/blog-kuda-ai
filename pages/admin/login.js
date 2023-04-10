@@ -69,7 +69,7 @@ async function checkLoginState(setIsLoggedIn, setUserName) {
 }
 
 async function logOut(event) {
-  console.log({ event });
+  event.preventDefault()
   var lyricsAPIURL = process.env.NEXT_PUBLIC_LYRICSAPI_BASE_URL;
   var res = await fetch(lyricsAPIURL + "/signout", {
     method: "GET",
