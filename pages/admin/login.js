@@ -77,7 +77,7 @@ async function logOut(event) {
     cache: "no-cache",
   });
 
-  if (res.status == 200) {
+  if (res.status == 204) {
     setIsLoggedIn(false);
   }
 }
