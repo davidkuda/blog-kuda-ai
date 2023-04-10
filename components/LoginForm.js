@@ -50,9 +50,6 @@ export default function SignIn(props) {
       body: input,
     });
 
-    console.log("hello");
-    console.log({ res });
-
     if (res.status == 201) {
       props.setFailedAttempt(false);
       props.setIsLoggedIn(true);
