@@ -9,6 +9,16 @@ export default function Covers(props) {
     <div>
       <Headers headers={{ title: "kuda.ai | Guitar Songs I like to play" }} />
       <main className="space-y-4 mt-16">
+        <p>
+          {" "}
+          I learned a lot by playing songs and figuring out their chords by by
+          ear. Here I publish my transcriptions.{" "}
+        </p>
+        <p>
+          Occasionally, I find myself with a guitar in front of a group or among
+          other musicians. Then we think about songs. This list is going to help
+          future me in such situations. :)
+        </p>
         <ul className="blog-posts-container flex flex-row flex-wrap justify-center items-center">
           {props.songs.map((song) => (
             <li className="w-2/3 mx-2 my-3" key={song.id}>
