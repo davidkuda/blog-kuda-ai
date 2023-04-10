@@ -25,6 +25,20 @@ export default function Login() {
     </div>
   );
 
+  async function logOut(event) {
+    event.preventDefault();
+    var lyricsAPIURL = process.env.NEXT_PUBLIC_LYRICSAPI_BASE_URL;
+    var res = await fetch(lyricsAPIURL + "/signout", {
+      method: "GET",
+      credentials: "include",
+      cache: "no-cache",
+    });
+
+    if (res.status == 204) {
+      setIsLoggedIn(false);
+    }
+  }
+
   var loginForm = (
     <LoginForm
       setUserName={setUserName}
@@ -65,19 +79,5 @@ async function checkLoginState(setIsLoggedIn, setUserName) {
     setIsLoggedIn(true);
     let sessionData = await res.json();
     setUserName(sessionData.session);
-  }
-}
-
-async function logOut(event) {
-  event.preventDefault()
-  var lyricsAPIURL = process.env.NEXT_PUBLIC_LYRICSAPI_BASE_URL;
-  var res = await fetch(lyricsAPIURL + "/signout", {
-    method: "GET",
-    credentials: "include",
-    cache: "no-cache",
-  });
-
-  if (res.status == 204) {
-    setIsLoggedIn(false);
   }
 }
