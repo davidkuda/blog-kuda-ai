@@ -3,8 +3,19 @@ import Link from "next/link";
 import Headers from "../components/Headers";
 import NewSongForm from "../components/NewSongForm";
 import Footer from "../components/Footer";
+import { useState } from "react";
+import { hasActiveSession } from "../lib/lyricsapi";
 
 export default function Covers(props) {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  async function checkLoginState(setLoginState) {
+    const [loggedIn, sessionData] = await hasActiveSession();
+    setLoginState(loggedIn);
+  }
+
+  checkLoginState(setIsLoggedIn);
+
   return (
     <div>
       <Headers headers={{ title: "kuda.ai | Guitar Songs I like to play" }} />
@@ -32,7 +43,7 @@ export default function Covers(props) {
           ))}
         </ul>
       </main>
-      {props.token ? <NewSongForm token={props.token} /> : ""}
+      {isLoggedIn ? <NewSongForm token={props.token} /> : ""}
       <Footer />
     </div>
   );
