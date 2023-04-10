@@ -1,16 +1,15 @@
-import { useState } from "react"
+import { useState } from "react";
 
 import Headers from "../../components/Headers";
 import LoginForm from "../../components/LoginForm";
 import Footer from "../../components/Footer";
 
-
 export default function Login() {
-  let [failedAttempt, setFailedAttempt] = useState()
-  let [isLoggedIn, setIsLoggedIn] = useState(false)
-  let [userName, setUserName] = useState()
+  let [failedAttempt, setFailedAttempt] = useState();
+  let [isLoggedIn, setIsLoggedIn] = useState(false);
+  let [userName, setUserName] = useState();
 
-  checkLoginState(setIsLoggedIn, setUserName)
+  checkLoginState(setIsLoggedIn, setUserName);
 
   var headers = {};
 
@@ -20,18 +19,23 @@ export default function Login() {
       <button
         onClick={logOut}
         className="w-1/5 px-4 py-1 gradient-fill rounded-md drop-shadow text-white hover:drop-shadow-lg hover:gradient-fill-inverse active:gradient-fill"
-      >log out</button>
+      >
+        log out
+      </button>
     </div>
-  )
+  );
 
   var loginForm = (
     <LoginForm
       setUserName={setUserName}
       setFailedAttempt={setFailedAttempt}
       setIsLoggedIn={setIsLoggedIn}
-    />)
+    />
+  );
 
-  var wrongCreds = <p className="text-center my-20 text-red-600">Wrong Credentials!</p>
+  var wrongCreds = (
+    <p className="text-center my-20 text-red-600">Wrong Credentials!</p>
+  );
 
   return (
     <div>
@@ -45,7 +49,7 @@ export default function Login() {
 
 async function checkLoginState(setIsLoggedIn, setUserName) {
   // check if there is an active session based on cookie
-  var lyricsAPIURL = process.env.NEXT_PUBLIC_LYRICSAPI_BASE_URL
+  var lyricsAPIURL = process.env.NEXT_PUBLIC_LYRICSAPI_BASE_URL;
   var res = await fetch(lyricsAPIURL + "/session", {
     method: "GET",
     credentials: "include",
@@ -53,17 +57,17 @@ async function checkLoginState(setIsLoggedIn, setUserName) {
   });
 
   if (res.status == 401) {
-    setIsLoggedIn(false)
-    return
+    setIsLoggedIn(false);
+    return;
   }
 
   if (res.status == 200) {
-    setIsLoggedIn(true)
-    let sessionData = await res.json()
-    setUserName(sessionData.session)
+    setIsLoggedIn(true);
+    let sessionData = await res.json();
+    setUserName(sessionData.session);
   }
 }
 
 async function logOut(event) {
-  console.log({ event })
+  console.log({ event });
 }
