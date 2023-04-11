@@ -10,9 +10,11 @@ export default function NewSongForm() {
         />
         <TextArea id="chords" rows="2" label="Chords" />
         <TextArea id="lyrics" rows="4" label="Lyrics" />
-        <button type="submit" className="px-5 py-2 gradient-fill rounded-lg text-white">
-          Create New Song
-        </button>
+        <div className="flex flex-col md:items-center">
+          <button type="submit" className="px-5 py-2 gradient-fill rounded-lg text-white">
+            Create New Song
+          </button>
+        </div>
       </form>
     </div>
   )
