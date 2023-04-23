@@ -44,6 +44,12 @@ async function uploadSong(event) {
     headers: headers,
     body: JSON.stringify(data),
   })
+
+  if (res.status >= 201) {
+    console.log("success")
+  } else {
+    console.log("failed creating new song: ", res.text)
+  }
 }
 
 function FormRowFull({ type, id, labelText }) {
