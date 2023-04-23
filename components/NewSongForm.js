@@ -33,22 +33,17 @@ async function uploadSong(event) {
   }
 
   var headers = {
-      "Content-Type": "application/json",
-      "credentials": "include",
-      "Authorization": `Bearer ${f.dataset.token}`,
+    "Content-Type": "application/json",
+    "credentials": "include",
   }
-
-  console.log({headers})
 
   var lyricsAPIURL = process.env.NEXT_PUBLIC_LYRICSAPI_BASE_URL
   var res = await fetch(lyricsAPIURL + "/songs", {
-    "method": "POST",
+    method: "POST",
+    credentials: "include",
     headers: headers,
-    "body": JSON.stringify(data),
+    body: JSON.stringify(data),
   })
-
-  console.log(res)
-  // TODO: show success or fail with reasion (e.g. song exists already)
 }
 
 function FormRowFull({ type, id, labelText }) {
