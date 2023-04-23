@@ -43,7 +43,7 @@ export default function Covers(props) {
               </li>
             ))}
           </ul>
-          {isLoggedIn ? <NewSongForm token={props.token} /> : ""}
+          {isLoggedIn ? <NewSongForm /> : ""}
         </main>
       </div>
       <Footer />
