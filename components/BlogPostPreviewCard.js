@@ -15,8 +15,11 @@ export default function BlogPostPreviewCard({
     <>
       <li className="w-2/3 mx-2 my-3">
         <div>
-          <Link href={`blog/${id}`}>
-            <a className="cursor-pointer text-l font-medium">{title}</a>
+          <Link
+            href={`blog/${id}`}
+            className="cursor-pointer text-l font-medium"
+          >
+            {title}
           </Link>
           <br />
           <span className="text-gray-600 text-xs">
