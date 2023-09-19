@@ -3,7 +3,7 @@ import { format, parseISO } from "date-fns";
 import 'highlight.js/styles/tokyo-night-dark.css'
 
 import Headers from "../../components/Headers";
-import { getPost, getAssetUrlById } from "../../lib/contentful_api";
+import { getAllPosts, getPost, getAssetUrlById } from "../../lib/contentful_api";
 
 
 export default function Post({ postData }) {
@@ -44,7 +44,16 @@ export default function Post({ postData }) {
   );
 }
 
-export async function getServerSideProps({ params }) {
+export async function getStaticPaths() {
+  const posts = await getAllPosts();
+  const paths = posts.map((post) => ({
+    params: { id: post.fields.id },
+  }))
+ 
+  return { paths, fallback: false }
+}
+
+export async function getStaticProps({ params }) {
 
   const postData = await getPost(params.id);
 

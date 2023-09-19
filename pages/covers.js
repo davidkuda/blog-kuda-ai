@@ -1,21 +1,9 @@
 import Link from "next/link";
 
 import Headers from "../components/Headers";
-import NewSongForm from "../components/NewSongForm";
 import Footer from "../components/Footer";
-import { useState } from "react";
-import { hasActiveSession } from "../lib/lyricsapi";
 
 export default function Covers(props) {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-
-  async function checkLoginState(setLoginState) {
-    const [loggedIn, sessionData] = await hasActiveSession();
-    setLoginState(loggedIn);
-  }
-
-  checkLoginState(setIsLoggedIn);
-
   return (
     <div>
       <Headers headers={{ title: "kuda.ai | Guitar Songs I like to play" }} />
@@ -23,7 +11,7 @@ export default function Covers(props) {
         <main className="prose text-sm md:text-base">
           <p>
             {" "}
-            I learned a lot by playing songs and figuring out their chords by by
+            I have learned a lot by covering songs and figuring out their chords by by
             ear. Here I publish my transcriptions.{" "}
           </p>
           <p>
@@ -43,7 +31,6 @@ export default function Covers(props) {
               </li>
             ))}
           </ul>
-          {isLoggedIn ? <NewSongForm /> : ""}
         </main>
       </div>
       <Footer />
@@ -51,7 +38,7 @@ export default function Covers(props) {
   );
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   var lyricsAPIURL = process.env.NEXT_PUBLIC_LYRICSAPI_BASE_URL;
   var res = await fetch(lyricsAPIURL + "/songs", {
     method: "GET",

@@ -24,7 +24,21 @@ export default function CoverSong({ song }) {
   );
 }
 
-export async function getServerSideProps(context) {
+export async function getStaticPaths() {
+  var lyricsAPIURL = process.env.NEXT_PUBLIC_LYRICSAPI_BASE_URL;
+  var res = await fetch(lyricsAPIURL + "/songs", {
+    method: "GET",
+  });
+
+  var songs = await res.json();
+  const paths = songs.map((song) => ({
+    params: { song: song.id },
+  }))
+ 
+  return { paths, fallback: false }
+}
+
+export async function getStaticProps(context) {
   var songID = context.params.song;
   var a = process.env.NEXT_PUBLIC_LYRICSAPI_BASE_URL
   var res = await fetch(a + "/songs/" + songID);

@@ -13,7 +13,7 @@ export default function About({ data }) {
   );
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   return {
     props: {
       data: await getPageContent("about_page"),
