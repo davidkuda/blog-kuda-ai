@@ -16,7 +16,7 @@ export default function Home() {
             <br />
             Software Engineer
             <br />
-            Berlin
+            Switzerland
             <br />
           </h2>
         </div>
